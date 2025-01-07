@@ -103,6 +103,26 @@
             productList.innerHTML = productHTML
           });
         });
+
+        const cart = [];
+        function addToCart(event) {
+          console.log(event.target.getAttribute('data-id'));
+          const productId = event.target.getAttribute('data-id');
+          const product = productsData(productId - 1) // global variable finds product
+          
+          let cartItem = {
+            name: product.name,
+          };
+          cart.push(cartItem);
+          console.log(cart);
+          renderCart();
+
+          function renderCart() {
+            const cartList = document.getElementsbyId('cart-list');
+            cartItem += `<p>${product.name}</p>`;
+            
+          }
+        }
     </script>
   </body>
 </html>
