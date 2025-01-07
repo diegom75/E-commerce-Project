@@ -116,6 +116,7 @@
           cart.push(cartItem);
           console.log(cart);
           renderCart();
+        }
 
           function renderCart() {
             const cartList = document.getElementsbyId('cart-list');
@@ -123,9 +124,8 @@
             cart.forEach((product) => {
               cartItem += `<p>${product.name}</p>`;
             });
-            
+            cartList.innerHTML = cartItem;
           };
-        }
     </script>
   </body>
 </html>
