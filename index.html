@@ -76,11 +76,13 @@
     ></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        let productHTML = ''  
+        const productList = document.quertSelector('#product-list');
+        let productHTML = '';  
+        let productsData = [];
         fetch('products.json')
           .then(response => response.json)
           .then(data => {
-            // console.log(data)
+            productsData = data.products;
             data.products.forEach(product =>{
               console.log(product.name)
               productHTML += `
