@@ -83,16 +83,16 @@
           .then(response => response.json)
           .then(data => {
             productsData = data.products;
-            data.products.forEach(product =>{
-              console.log(product.name)
+            data.products.forEach(products =>{
+              console.log(products.name)
               productHTML += `
               <div class="col-md-4">
           <div class="card mb-4">
-              <img src="https://placehold.co/100" class="card-img-top" alt="Product 1">
+              <img src="${products.image}" class="card-img-top" alt="Product 1">
               <div class="card-body">
-                  <h5 class="card-title">${product.name}/h5>
-                  <p class="card-text">$10.99</p>
-                  <p class="card-text">Description for product 1</p>
+                  <h5 class="card-title">${products.name}/h5>
+                  <p class="card-text">${products.price}</p>
+                  <p class="card-text">${products.description}</p>
                   <button class="btn btn-primary add-to-cart" data-id="1">Add to Cart</button>
               </div>
           </div>
