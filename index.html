@@ -100,11 +100,15 @@
       </div>
       `
             });
-          });
+          
             productList.innerHTML = productHTML
             document.querySelectorAll('.add-to-cart').forEach((button) => {
               button.addEventListener('click', addToCart);
             });
+
+            function addToCart(event) {
+              console.log('click');
+            }
 
         const cart = [];
         function addToCart(event) {
@@ -128,6 +132,7 @@
             });
             cartList.innerHTML = cartItem;
           };
+          });
     </script>
   </body>
 </html>
